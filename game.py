@@ -211,13 +211,14 @@ def menu(exits):
         print_menu(exits)
         # Read player's input
         user_input=input()
-        if is_valid_exit(exits,user_input)==True:
-            return user_input
+        t=normalise_input(user_input)
+        if is_valid_exit(exits,t):
+            return t
         else:
             print("Type a valid exit\n")
 
         # Normalise the input
-        normalise_input(user_input)
+        #user_input=normalise_input(user_input)
         # Check if the input makes sense (is valid exit)
             # If so, return the player's choice
 
